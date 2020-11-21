@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Treasure Map</string>
+
+    <string name="back">retour</string>
+    <string name="categorie">Sélectionnez une catégorie d\'activité</string>
+
+    <string name="secteur">Sélectionnez un secteur</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="activite">Sélectionnez une activité</string>
+    <string name="trouvez">Trouvez votre activité!</string>
+
+</resources>

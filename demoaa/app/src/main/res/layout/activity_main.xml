@@ -1,0 +1,124 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ca.csf.mobile2.treasureMap.MainActivity">
+
+
+    <Button
+            android:id="@+id/backButton"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="125dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.062"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:backgroundTint="#d66a00" android:visibility="invisible"/>
+    <GridView
+            android:background="#E8E8E8"
+            android:layout_width="361dp"
+            android:layout_height="562dp"
+            android:numColumns="2"
+            android:horizontalSpacing="10dp"
+            android:verticalSpacing="10dp"
+            android:id="@+id/grid"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="36dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.864"
+            android:visibility="visible"/>
+    <TextView
+            android:text="@string/categorie"
+            android:layout_width="364dp"
+            android:layout_height="32dp"
+            android:id="@+id/indication" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.548"
+            android:textAlignment="textStart" android:textSize="18sp" android:textStyle="bold"
+            android:textColor="#773b00" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/grid" app:layout_constraintVertical_bias="1.0"
+            android:visibility="visible"/>
+    <ListView
+            android:background="#E8E8E8"
+            android:layout_width="360dp"
+            android:layout_height="504dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/indication" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintVertical_bias="0.0" android:visibility="invisible" android:id="@+id/list"/>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="540dp" android:id="@+id/mapFrame" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.325"
+            android:visibility="invisible">
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:id="@+id/gmap"
+                tools:context="ca.csf.mobile2.treasureMap.map.MapsActivity"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.195"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="309dp"
+                android:layout_height="51dp"
+                android:id="@+id/mapDescription" android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/gmap"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="1.0"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textAlignment="textStart"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="377dp"
+                android:layout_height="49dp"
+                android:id="@+id/mapAdresse"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="1.0"
+                android:textColor="#404040"
+                android:textAlignment="textStart" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/mapDescription"/>
+        <ImageView
+                android:src="@drawable/marker_blue"
+                android:layout_width="64dp"
+                android:layout_height="63dp"
+                android:id="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/mapDescription"
+                android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/gmap"/>
+    </android.support.constraint.ConstraintLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/loadingImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.499"
+            app:layout_constraintHorizontal_bias="0.497" android:visibility="invisible"/>
+
+
+</android.support.constraint.ConstraintLayout>
